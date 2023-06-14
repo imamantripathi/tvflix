@@ -1,6 +1,6 @@
 # Tvflix 🎞
 
-## What is the use of this Repo
+## About this repo
 
 This Project is a Simple Vanilla JS Project which demonstrates the following
 1. Responsive web app leveraging Postman and the TMDB API for seamless data retrieval and comprehensive movie details.
