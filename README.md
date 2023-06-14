@@ -1,5 +1,7 @@
 # Tvflix 🎞
 
+![image](https://github.com/Shivam171/Tvflix/assets/66107248/cc368a2b-23d8-4568-b4fe-7c36fe8a62c3)
+
 ## About this repo
 
 This Project is a Simple Vanilla JS Project which demonstrates the following
@@ -13,8 +15,6 @@ This project Template can be used to build bigger projects
 
 ### https://tvflix-shivam171.netlify.app/
 This URL has the application deployed in Netlify
-
-![image](https://github.com/Shivam171/Tvflix/assets/66107248/cc368a2b-23d8-4568-b4fe-7c36fe8a62c3)
 
 ## Contributing
 
