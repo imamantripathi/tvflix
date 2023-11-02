@@ -11,11 +11,6 @@ This Project is a Simple Vanilla JS Project which demonstrates the following
 
 This project Template can be used to build bigger projects
 
-## Live Application URL
-
-### https://tvflix-shivam171.netlify.app/
-This URL has the application deployed in Netlify
-
 ## Contributing
 
 Contributions are welcome! If you encounter any bugs or have suggestions for new features, please open an issue or submit a pull request.
