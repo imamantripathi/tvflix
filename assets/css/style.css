@@ -395,7 +395,7 @@ body {
   flex-grow: 1;
 }
 
-.search-field {
+.search-field,.num-recommendations-field {
   background-color: var(--banner-background);
   height: 48px;
   line-height: 48px;

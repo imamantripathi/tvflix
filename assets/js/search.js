@@ -6,6 +6,16 @@ import { createMovieCard } from "./movie-card.js";
 export function search() {
   const searchWrapper = document.querySelector("[search-wrapper]");
   const searchField = document.querySelector("[search-field]");
+  let numberOfRecommendationsValue = 5; // Default value, you can set it to whatever you need
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const numberOfRecommendationsInput = document.querySelector('input[name="numberOfRecommendation"]');
+
+    numberOfRecommendationsInput.addEventListener('input', function () {
+      numberOfRecommendationsValue = numberOfRecommendationsInput.value;
+      console.log('Number of Recommendations:', numberOfRecommendationsValue);
+    });
+  });
 
   const searchResultModal = document.createElement("div");
   searchResultModal.classList.add("search-modal");
@@ -41,12 +51,26 @@ export function search() {
             </div>
           `;
 
-          for (const movie of movieList) {
-            const movieCard = createMovieCard(movie);
-
+          // Displaying details of the searched movie
+          if (movieList.length > 0) {
+            const searchedMovie = movieList[0];
+            const movieCard = createMovieCard(searchedMovie);
             searchResultModal
               .querySelector(".grid-list")
               .appendChild(movieCard);
+
+            // Fetching and displaying user-specified number of similar movies
+            fetchDataFromServer(
+              `https://api.themoviedb.org/3/movie/${searchedMovie.id}/similar?api_key=${api_key}&page=1`,
+              function ({ results: similarMovies }) {
+                for (let i = 1; i < Math.min(numberOfRecommendationsValue, similarMovies.length); i++) {
+                  const similarMovieCard = createMovieCard(similarMovies[i]);
+                  searchResultModal
+                    .querySelector(".grid-list")
+                    .appendChild(similarMovieCard);
+                }
+              }
+            );
           }
         }
       );
